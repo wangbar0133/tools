@@ -7,11 +7,11 @@ if __name__ == "__main__":
     slot_loc = sys.argv[2]
     GETHAPI = sys.argv[3]
 
-    # 初始化Web3对象
+    # init Web3 object
     w3 = Web3(Web3.HTTPProvider(GETHAPI))
 
-    # 读取slot
-    value = w3.eth.getStorageAt(address, slot_loc).hex()
+    # read slot
+    value = w3.eth.get_storage_at(address, slot_loc).hex()
 
     print("hex:  " + value)
     print("int:  " + int(value, 16).__str__())
